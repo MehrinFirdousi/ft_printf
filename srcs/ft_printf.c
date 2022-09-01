@@ -17,7 +17,7 @@ int	ft_printf(const char *s, ...)
 	int		i;
 	char	format;
 	int		len;
-	va_list ap;
+	va_list	ap;
 
 	i = -1;
 	len = 0;

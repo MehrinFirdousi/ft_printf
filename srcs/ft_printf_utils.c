@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mfirdous <mfirdous@student.42abudhabi.a    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/01 12:49:30 by mfirdous          #+#    #+#             */
+/*   Updated: 2022/09/01 12:49:30 by mfirdous         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	print_var(char format, va_list ap)
@@ -5,7 +17,7 @@ int	print_var(char format, va_list ap)
 	if (format == 'c')
 		return (print_char(va_arg(ap, int)));
 	if (format == 's')
-		return (print_str(va_arg(ap, void*)));
+		return (print_str(va_arg(ap, void *)));
 	if (format == 'p')
 		return (ft_print_memory(va_arg(ap, unsigned long long int)));
 	if (format == 'd' || format == 'i')
@@ -21,12 +33,12 @@ int	print_var(char format, va_list ap)
 	return (0);
 }
 
-int print_char(int c)
+int	print_char(int c)
 {
 	return (write(1, &c, 1));
 }
 
-int print_str(void *str)
+int	print_str(void *str)
 {
 	if (!str)
 		return (write(1, "(null)", 6));
@@ -62,15 +74,14 @@ int	ft_putnbr_base(long long int num, char *base)
 int	ft_print_memory(unsigned long long int num)
 {
 	char	s_num[16];
-	char	base[] = "0123456789abcdef";
+	char	base[17];
 	int		num_len;
 	int		i;
 
-	if (!num)
-		return (write(1, "(nil)", 5));
 	i = 0;
 	num_len = 0;
 	num_len += write(1, "0x", 2);
+	ft_strlcpy(base, "0123456789abcdef", 17);
 	while (num > 15)
 	{
 		s_num[i++] = base[num % 16];

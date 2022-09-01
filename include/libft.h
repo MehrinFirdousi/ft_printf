@@ -13,11 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# ifdef _WIN32
-#  include <io.h>
-# else
-#  include <unistd.h>
-# endif
+# include <unistd.h>
 # include <stdint.h>
 # include <stdlib.h>
 # include <stdio.h>

@@ -10,13 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include "libft.h"
-#include <stdio.h>
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int		ft_printf(const char *format, ...);
-int		print_var(char format, va_list args);
-int		print_char(int c);
-int		print_str(void *str);
-int		ft_putnbr_base(long long int num, char *base);
-int		ft_print_memory(unsigned long long int num);
+# include <stdarg.h>
+# include <stdio.h>
+# include "libft.h"
+
+int	ft_printf(const char *format, ...);
+int	print_var(char format, va_list args);
+int	print_char(int c);
+int	print_str(void *str);
+int	ft_putnbr_base(long long int num, char *base);
+int	ft_print_memory(unsigned long long int num);
+
+#endif
