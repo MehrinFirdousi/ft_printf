@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfirdous <mfirdous@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/09 09:57:54 by mfirdous          #+#    #+#             */
-/*   Updated: 2022/08/09 09:57:54 by mfirdous         ###   ########.fr       */
+/*   Created: 2022/07/12 10:26:53 by mfirdous          #+#    #+#             */
+/*   Updated: 2022/07/12 11:43:39 by mfirdous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include "libft/libft.h"
-#include <stdio.h>
+#include "libft.h"
 
-int		ft_printf(const char *format, ...);
-int		print_var(char format, va_list args);
-int		print_char(int c);
-int		print_str(void *str);
-int		ft_putnbr_base(long long int num, char *base);
-//int		ft_print_memory(void *mem);
+int	ft_isalpha(int c)
+{
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	return (0);
+}

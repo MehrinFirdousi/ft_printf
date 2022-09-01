@@ -1,5 +1,6 @@
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 #include <stdlib.h>
+#include <limits.h>
 
 void test(char *str, ...)
 {
@@ -19,8 +20,9 @@ int main(int argc, char **argv)
 	int len2 = 0;
 
 	int x = 1234;
-	char *ptr = 0;
-	len1 = ft_printf("%s\n", "e");
-	//len2 = printf("%p\n", ptr);
+	char *ptr = "sdfdsf";
+	len1 = ft_printf(" %p %p ", 0, 0);
+	len2 = printf(" %p %p ", 0, 0);
 	printf("%d, %d\n", len1, len2);
+	printf("\nlen = %d", len2);
 }
